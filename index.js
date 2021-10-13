@@ -7,7 +7,7 @@ let express = require("express"),
     bodyParser = require("body-parser");
 
 //import routes
-const cliente = require("../backend/src/routes/clientes.routes");
+const cliente = require("../src/routes/clientes.routes");
 const habitacion = require("./src/routes/habitaciones.routes");
 const reserva = require("./src/routes/reservas.routes");
 const login = require("./src/routes/login.routes");
