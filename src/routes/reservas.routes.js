@@ -13,7 +13,7 @@ reservaRoute.route("/").get((req, res) => {
             console.log(error);
             res.json(data);
         }
-    }).populate('datosCliente infoHabitacion');
+    });
 });
 
 

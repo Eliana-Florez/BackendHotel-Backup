@@ -3,28 +3,20 @@ const Schema = mongoose.Schema;
 
 let reservaSchema = new Schema(
     {
+        nombresClient: { type: String, },
+        apellidosClient: { type: String, },
+        cedulaClient: { type: Number },
+        ciudadOrigenClient: { type: String, },
+        telefonoClient: { type: Number, },
+        emailClient: { type: String, },
         numPersonas: { type: Number },
+        infoHabitacion: { type: String },
         fechaIngreso: { type: String},
         fechaSalida: { type: String },
-        datosCliente: [
-            {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'Clientes',
-            autopopulate: true,
-            },
-        ],
-        infoHabitacion: [
-            {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'Habitaciones',
-            autopopulate: true,
-            },
-        ],
     },
     {
         collection: "Reservas",
     }
 );
 
-reservaSchema.plugin(require('mongoose-autopopulate'));
 module.exports = mongoose.model("Reservas", reservaSchema);
