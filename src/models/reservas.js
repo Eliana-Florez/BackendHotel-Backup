@@ -10,7 +10,7 @@ let reservaSchema = new Schema(
         telefonoClient: { type: Number, },
         emailClient: { type: String, },
         numPersonas: { type: Number },
-        infoHabitacion: { type: String },
+        infoHabitacion: [{type: String}],
         fechaIngreso: { type: String},
         fechaSalida: { type: String },
     },
