@@ -28,7 +28,7 @@ clienteRoute.route("/add").post((req, res, next) => {
 });
 
 // GET BY id clientes
-clienteRoute.route("/getID").get((req, res) => {
+clienteRoute.route("/getID/:id").get((req, res) => {
     clienteModel.findOne({cedula:req.body.cedula }, (error, data, next) => {
         if (error) {
             console.log(error);
