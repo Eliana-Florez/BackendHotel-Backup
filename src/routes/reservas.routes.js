@@ -30,7 +30,7 @@ reservaRoute.route("/add").post((req, res, next) => {
 });
 
 // GET BY id reserva
-reservaRoute.route("/edit-client/:id").get((req, res) => {
+reservaRoute.route("/getID/:id").get((req, res) => {
     reservaModel.findById(req.params.id, (error, data, next) => {
         if (error) {
             console.log(error);
@@ -42,7 +42,7 @@ reservaRoute.route("/edit-client/:id").get((req, res) => {
 });
 
 //PUT reserva
-reservaRoute.route("/update-client/:id").put((req, res, next) => {
+reservaRoute.route("/update/:id").put((req, res, next) => {
     reservaModel.findByIdAndUpdate(
         req.params.id,
         {

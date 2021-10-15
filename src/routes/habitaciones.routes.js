@@ -28,7 +28,7 @@ habitacionRoute.route("/add").post((req, res, next) => {
 });
 
 // GET BY id habitación
-habitacionRoute.route("/edit-client/:id").get((req, res) => {
+habitacionRoute.route("/getID/:id").get((req, res) => {
     habitacionModel.findById(req.params.id, (error, data, next) => {
         if (error) {
             console.log(error);
@@ -40,7 +40,7 @@ habitacionRoute.route("/edit-client/:id").get((req, res) => {
 });
 
 //PUT habitación
-habitacionRoute.route("/update-client/:id").put((req, res, next) => {
+habitacionRoute.route("/update/:id").put((req, res, next) => {
     habitacionModel.findByIdAndUpdate(
         req.params.id,
         {
