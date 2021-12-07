@@ -11,7 +11,7 @@ const cliente = require("./src/routes/clientes.routes");
 const habitacion = require("./src/routes/habitaciones.routes");
 const reserva = require("./src/routes/reservas.routes");
 const contacto = require("./src/routes/contantenos.routes");
-const passport = require("./src/config/passport");
+const passport = require("passport");
 const users = require("./src/routes/users.routes");
 
 
@@ -62,7 +62,7 @@ mongoose
 app.use(passport.initialize());
 
 // Passport config
-require("./config/passport")(passport);
+require("./src/config/passport")(passport);
 
 
 //RUTAS
