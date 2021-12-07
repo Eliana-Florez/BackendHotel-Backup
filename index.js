@@ -10,8 +10,9 @@ let express = require("express"),
 const cliente = require("./src/routes/clientes.routes");
 const habitacion = require("./src/routes/habitaciones.routes");
 const reserva = require("./src/routes/reservas.routes");
-const login = require("./src/routes/login.routes");
 const contacto = require("./src/routes/contantenos.routes");
+const passport = require("./src/config/passport");
+const users = require("./src/routes/users.routes");
 
 
 const app = express();
@@ -57,11 +58,19 @@ mongoose
         }
     );
 
+// Passport middleware
+app.use(passport.initialize());
+
+// Passport config
+require("./config/passport")(passport);
+
+
 //RUTAS
 app.use('/api/cliente', cliente);
 app.use('/api/reserva', reserva);
 app.use('/api/habitacion', habitacion);
 app.use('/api/contacto', contacto);
+app.use('/api/users', users);
 
 
 
