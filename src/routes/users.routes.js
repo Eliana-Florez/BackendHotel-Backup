@@ -9,6 +9,22 @@ const validateLoginInput = require("../validation/login");
 // Load User model
 const User = require("../models/User");
 
+
+
+// GET  
+router.route("/").get((req, res) => {
+  User.find((error, data, next) => {
+        if (error) {
+            return next(error);
+        } else {
+            console.log(error);
+            res.json(data);
+        }
+    });
+});
+
+
+
 // @route POST api/users/register
 // @desc Register user
 // @access Public
